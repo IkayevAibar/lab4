@@ -6,7 +6,11 @@
         </br>
         @foreach($friends as $friend )
             {{$friend->name}}
-            <a type="button" action="friend/{{$friend->id}}/sendMessage" name="" id="" class="btn btn-primary" btn-lg btn-block">send message</a>
+            <form action="{{route('showMessenger')}}" method="post">
+                @csrf
+                <input type="hidden" name='user_id' value={{$friend->id}}>
+                <input type="submit">
+            </form>
         @endforeach
     </div>
     

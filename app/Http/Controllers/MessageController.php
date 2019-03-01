@@ -8,8 +8,9 @@ use App\User;
 
 class MessageController extends Controller
 {
-    public function showMessenger(User $user){
-        return view("messenger",['user'->$user]);
+    public function showMessenger(Request $request){
+        $user=User::where('id',$request->post('user_id'))->first();
+        return view("friends.sendMessage",['user'=>$user]);
     }
     public function sendMessage(Request $request, User $user)
     {
