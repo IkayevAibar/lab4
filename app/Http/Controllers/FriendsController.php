@@ -11,7 +11,7 @@ class FriendsController extends Controller
     public function friends()
     {
         $friends = Friends::myFriends();
-        return view('friends', [
+        return view('friends.friends', [
             'friends' => $friends,
         ]);
     }
