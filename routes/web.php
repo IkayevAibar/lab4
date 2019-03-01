@@ -22,6 +22,7 @@ Route::get('/posts/{post}', 'PostsController@show');
 Route::get('/write', 'PostsController@write');
 Route::get('/friends', 'FriendsController@friends');
 Route::post('/sendMessage','MessageController@showMessenger')->name('showMessenger');
+Route::post('/sendMessenger','MessageController@sendMessage')->name('sendMessenger');
 Route::post('/writed', 'PostsController@writed')->name('writed');
 
 
