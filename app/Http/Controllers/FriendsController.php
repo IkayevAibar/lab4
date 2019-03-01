@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Friends;
 use User;
-
+use Auth;
 class FriendsController extends Controller
 {
     public function friends()
