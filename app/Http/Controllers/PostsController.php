@@ -13,8 +13,11 @@ class PostsController extends Controller
         $LastPosts = DB::table('posts')->select('id', 'title','body','src','created_at')->orderBy('id','DESC')->get();
         return view('posts.index',compact('LastPosts'));
     }
-    public function show (){
-        return view('posts.show');
+    public function show ($id){
+        $post=DB::table('posts')->select('id', 'title','body','src','created_at')->where('id',$id)->get();
+        $toPost=$post[0];
+        // dd($toPost);
+        return view('posts.show',compact('toPost'));
     }
     public function write(){
         return view('posts.write');
@@ -36,6 +39,6 @@ class PostsController extends Controller
             ] 
         ]);
         // $post->moredata = $moredata;
-        return view('posts.index');
+        return back();
     }
 }

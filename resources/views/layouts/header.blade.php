@@ -24,11 +24,10 @@
   <div class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container d-flex justify-content-between">
     <div class="d-flex flex-row">
-    @if (!isset(Auth::user()->id))
-      <a href="/" class="navbar-brand d-flex align-items-center justify-content-start" style="position:hidden;">
+    <a href="/" class="navbar-brand d-flex align-items-center justify-content-start" style="position:hidden;">
         Main Page
       </a>
-    @else
+    @if (isset(Auth::user()->id))
       <a href="profile/{{Auth::user()->id}}" class="navbar-brand d-flex align-items-center justify-content-start" style="position:hidden;">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2" focusable="false" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
       </a>
