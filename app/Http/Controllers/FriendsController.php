@@ -8,9 +8,6 @@ use User;
 
 class FriendsController extends Controller
 {
-<<<<<<< HEAD
-    
-=======
     public function friends()
     {
         $friends = Friends::myFriends();
@@ -25,5 +22,4 @@ class FriendsController extends Controller
         $friends->friend_id=$request->get('friend_id');
         return back();
     }
->>>>>>> c12d48debb204fb2bce7680a47b4cb05e69b781c
 }
