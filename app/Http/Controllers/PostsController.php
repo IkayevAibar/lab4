@@ -24,12 +24,12 @@ class PostsController extends Controller
     }
     public function writed( ){
         $input = Input::all();
-        // dd($input);
-        $post = new \stdClass();
+        $post = new Post();
         $post->user_id = $input["userid"];
         $post->title = $input["title"];
         $post->to_id = 0;
         $post->body = $input["body"];
+        $post->to_id = $input["body"];
         $post->src = $input["src"];
         $post->save();
         // $post->moredata = $moredata;

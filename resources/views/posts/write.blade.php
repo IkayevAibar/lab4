@@ -6,8 +6,8 @@
 @else
 <div class="container d-flex justify-content-center align-content-center " style="">
     
-    <form class="form mc-auto" style="width:50%; margin-top:80px;" method="get" action=" {{{ url("writed") }}}" >
-        
+    <form class="form mc-auto" style="width:50%; margin-top:80px;" method="post" action=" {{{ route("writed") }}}" >
+        @csrf
         <input type="hidden" name="userid" id="userid" class="form-control" value={{Auth::user()->id}}>
         
         <div class="form-group">
