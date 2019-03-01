@@ -11,22 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('auth.login');
+// });
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/news', 'HomeController@posts');
-Route::get('/news/{post}', 'HomeController@show');
+Route::get('/', 'PostsController@index');
+Route::get('/posts/{post}', 'PostsController@show');
+Route::get('/write', 'PostsController@write');
+Route::get('/writed', 'PostsController@writed');
 
-// Route::get('/news', function () {
-//     $posts=DB::table('posts')->get();
-//     return view('home',compact('posts'));
-// });
 
-// Route::get('/news/{post}', function ($id) {
-//     $post=DB::table('posts')->find($id);
-//     return view('posts.show',compact('post'));
-// });

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App;
+
 class HomeController extends Controller
 {
     /**
@@ -25,15 +25,4 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    public function posts()
-    {
-        $posts=App\Post::all();
-        return view('home',compact('posts'));
-    }
-    public function show($id)
-    {
-        $post=App\Post::find($id);
-        return view('posts.show',compact('post'));
-    }
-    
 }
