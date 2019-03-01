@@ -10,6 +10,7 @@ use DB;
 class PostsController extends Controller
 {
     public function index (){
+        
         $LastPosts = DB::table('posts')->select('id','user_id', 'title','body','src','created_at')->orderBy('id','DESC')->get();
         return view('posts.index',compact('LastPosts'));
     }

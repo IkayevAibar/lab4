@@ -6,14 +6,34 @@
         </br>
         <form class="form mc-auto" style="width:50%; margin-top:80px;" method="post" action="{{ route('sendMessenger') }}" >
             @csrf
-            <input type="hidden" name="userid" id="userid" class="form-control" value={{Auth::user()->id}}>
-            <input type="hidden" name="friend_id" id="friend_id" class="form-control" value={{$friend->id}}>
+            <input type="hidden" name="user_id" id="userid" class="form-control" value={{Auth::user()->id}}>
+            <input type="hidden" name="friend_id" id="friend_id" class="form-control" value={{$user->id}}>
             
             <div class="form-group">
-                <label for="">message to <strong>{{$friend->name}}</strong></label>
+                <label for="">message to <strong>{{$user->name}}</strong></label>
             </div>
             <div>
-
+            <table class="table table-striped table-hover ">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>From</th>
+                        <th>Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($messages as $message )
+                    <tr>
+                        <td>1</td>
+                        <td>{{$message->id}}</td>
+                        <td>
+                            {{$message->content}}
+                        </td>
+                    </tr>
+                    
+                    @endforeach
+                    </tbody>
+                </table>
             </div>
             <div class="form-group">
                 <label for="">Your message</label>

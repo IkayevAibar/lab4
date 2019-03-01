@@ -4,40 +4,32 @@
     
     <div class="container">
         </br>
-        <table class="table table-striped table-hover ">
+    <table class="table table-striped table-hover ">
 	<thead>
 		<tr>
 			<th>#</th>
 			<th>Name</th>
-			<th>Column heading</th>
+			<th>function</th>
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td>1</td>
-			<td>Column content</td>
-			<td>Column content</td>
-		</tr>
-		
-	
-</table>
-        @foreach($friends as $friend )
+	    @foreach($friends as $friend )
         <tr>
 			<td>1</td>
 			<td>{{$friend->name}}</td>
 			<td>
-            <form action="{{route('showMessenger')}}" method="post">
+            <form action="{{route('showMessenger')}}" method="get">
                 @csrf
-                <input type="hidden" name='friend_id' value={{$friend->id}}>
-                <input type="submit">
+                <input type="hidden" name='user_id' value={{$friend->id}}>
+                
+                <button type="submit" class="btn btn-primary">Open Dialog</button>
             </form>
             </td>
 		</tr>
 		
-            
-            
         @endforeach
         </tbody>
+    </table>
     </div>
     
 @endsection

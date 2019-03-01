@@ -12,6 +12,7 @@ class Friends extends Model
     public static function myFriends()
     {
         $friends = Friends::where('user_id', Auth::user()->id)->get();
+        $users=[];
         foreach ($friends as $friend) {
             $users[] = User::where('id', $friend->friend_id)->first();
         }
