@@ -34,11 +34,11 @@
     @endif
         @guest
                 <div class="nav-item ">
-                    <strong><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></strong>
+                  <strong><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></strong>
                 </div>
             @if (Route::has('register'))
                 <div class="nav-item">
-                <strong><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></strong>
+                  <strong><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></strong>
                 </div>
                 
             @endif
@@ -53,13 +53,18 @@
                                             document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
-
+                       
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
+                        
                     </div>
                 </div>
             @endguest
+            <a href="profile/{{Auth::user()->id}}" class="navbar-brand d-flex align-items-center justify-content-start" >
+              Friends
+            </a>
+            
       </div>
       
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
