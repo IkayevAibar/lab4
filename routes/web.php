@@ -20,7 +20,9 @@ Auth::routes();
 Route::get('/', 'PostsController@index');
 Route::get('/posts/{post}', 'PostsController@show');
 Route::get('/write', 'PostsController@write');
-Route::get('/friend{friend}/sendMessage', 'FriendsController@writed');
+Route::post('/friend/{friend}/sendMessage', 'FriendsController@sendMessage');
+Route::get('/friends', 'FriendsController@index');
+
 Route::post('/writed', 'PostsController@writed')->name('writed');
 
 

@@ -61,7 +61,7 @@
                     </div>
                 </div>
             @endguest
-            <a href="profile/{{Auth::user()->id}}" class="navbar-brand d-flex align-items-center justify-content-start" >
+            <a href="friends" class="navbar-brand d-flex align-items-center justify-content-start" >
               Friends
             </a>
             
