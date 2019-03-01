@@ -3,7 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Auth;
+use App\User;
 class Friends extends Model
 {
     public $table = "friends";
